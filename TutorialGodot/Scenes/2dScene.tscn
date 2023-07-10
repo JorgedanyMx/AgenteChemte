@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2hrnisjo0dqa"]
+
+[ext_resource type="PackedScene" uid="uid://c8mhfndoft41d" path="res://Scenes/card.tscn" id="1_obtrs"]
+
+[node name="2dScene" type="Node2D"]
+
+[node name="Card" parent="." instance=ExtResource("1_obtrs")]
