@@ -88,10 +88,10 @@ anchor_left = 0.514
 anchor_top = 0.5
 anchor_right = 0.514
 anchor_bottom = 0.5
-offset_left = -544.064
-offset_top = -952.5
-offset_right = 528.936
-offset_bottom = 956.5
+offset_left = -239.144
+offset_top = -324.136
+offset_right = 266.856
+offset_bottom = 329.864
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -190,10 +190,10 @@ anchor_left = 1.0
 anchor_top = 0.998
 anchor_right = 1.0
 anchor_bottom = 0.998
-offset_left = -832.013
-offset_top = -1507.18
-offset_right = -762.013
-offset_bottom = -1434.18
+offset_left = -265.013
+offset_top = -254.692
+offset_right = -195.013
+offset_bottom = -181.692
 texture = ExtResource("3_ws4t0")
 expand_mode = 1
 
@@ -204,10 +204,10 @@ libraries = {
 
 [node name="bankCard" parent="Control/Panel" instance=ExtResource("6_fg0nq")]
 layout_mode = 0
-offset_left = 200.136
-offset_top = 311.89
-offset_right = 200.136
-offset_bottom = 311.89
+offset_left = 252.0
+offset_top = 325.0
+offset_right = 252.0
+offset_bottom = 325.0
 scale = Vector2(0.322107, 0.322107)
 
 [node name="currentCard" parent="Control/Panel" instance=ExtResource("6_fg0nq")]
@@ -217,13 +217,13 @@ anchor_left = 0.511
 anchor_top = 0.5
 anchor_right = 0.511
 anchor_bottom = 0.5
-offset_left = 0.0856018
-offset_top = -12.1375
-offset_right = 0.0856018
-offset_bottom = -12.1375
+offset_left = -79.566
+offset_top = -87.0
+offset_right = -79.566
+offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.322107, 0.322107)
+scale = Vector2(0.156425, 0.156425)
 
 [node name="Front" parent="Control/Panel/currentCard" index="1"]
 position = Vector2(489.387, 1659.64)
