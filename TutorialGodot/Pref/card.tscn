@@ -50,6 +50,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/normal_font_size = 28
 text = "Texto textoso que se textea siempre al textear"
+metadata/_edit_use_anchors_ = true
 
 [node name="RespIzq" type="Sprite2D" parent="Front/Content"]
 position = Vector2(-1036.98, -1006.59)

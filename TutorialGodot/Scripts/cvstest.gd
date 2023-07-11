@@ -13,6 +13,7 @@ func _ready():
 #	maindata = Get_data("Cap2")
 #	line=maindata[1]
 #	showCard(line)
+	pass
 
 """
 # Called every frame. 'delta' is the elapsed time since the previous frame.

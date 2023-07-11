@@ -15,7 +15,7 @@ func infoCard(resp1,resp2,bgColor, linkImg):
 	changeAlphaIzq(1)
 	changeAlphaDer(1)
 	if(linkImg!=null):
-		$Front/Content.texture = load("linkImg")
+		setImg(linkImg)
 	if(bgColor!=null):
 		$Front.modulate =Color(bgColor)
 	$Front/Content/RespDer/txtRespDer.text=resp1
@@ -38,3 +38,10 @@ func changeAlphaDer(alp):
 func flipBack():
 	$Back.visible=true
 	$Front.visible=false
+	
+func setImg(urlImg):
+	$Front/Content.texture=load("res://Sprites/"+urlImg) as Texture 
+
+func setBgColor(colorS):
+	$Front/Content.self_modulate=Color("#"+colorS)
+	pass

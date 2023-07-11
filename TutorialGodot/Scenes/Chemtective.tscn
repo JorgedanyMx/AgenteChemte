@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6r0vvcejbthb"]
+[gd_scene load_steps=16 format=3 uid="uid://c6r0vvcejbthb"]
 
 [ext_resource type="Script" path="res://Scripts/cvstest.gd" id="1_fdyoq"]
 [ext_resource type="Script" path="res://Scripts/Dialogo.gd" id="2_6btu7"]
 [ext_resource type="Texture2D" uid="uid://ddxmq1skqlofi" path="res://Sprites/cardbg1.jpg" id="3_ws4t0"]
 [ext_resource type="FontFile" uid="uid://cdwav2ai3eo0u" path="res://Fonts/MorrisRomanBlack.ttf" id="4_aoas3"]
-[ext_resource type="Script" path="res://Scripts/JsonChecker.gd" id="5_3imw6"]
+[ext_resource type="Texture2D" uid="uid://brc1kibopukjm" path="res://Sprites/button.png" id="6_c40fq"]
 [ext_resource type="PackedScene" uid="uid://bogmqbat6i0l3" path="res://Pref/card.tscn" id="6_fg0nq"]
+[ext_resource type="Texture2D" uid="uid://b080qufyf6kmh" path="res://Sprites/Cap1/Chemtective1.png" id="6_r31ui"]
+[ext_resource type="Script" path="res://Scenes/UIControl.gd" id="6_uip2p"]
+[ext_resource type="Texture2D" uid="uid://vufehw05hny4" path="res://Sprites/Pressed.png" id="7_hucs5"]
+[ext_resource type="Texture2D" uid="uid://dbdwtxvf8qgx6" path="res://Sprites/hover.png" id="8_krfug"]
+[ext_resource type="Texture2D" uid="uid://bcitlc66625pq" path="res://Sprites/bg2.jpg" id="10_p33la"]
+[ext_resource type="Script" path="res://Scenes/MenuControl.gd" id="10_phr34"]
 
 [sub_resource type="Animation" id="Animation_kvi7l"]
 length = 0.001
@@ -59,7 +65,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 0.367981
+offset_right = 0.0319824
+offset_bottom = 0.271851
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_6btu7")
@@ -81,10 +88,10 @@ anchor_left = 0.514
 anchor_top = 0.5
 anchor_right = 0.514
 anchor_bottom = 0.5
-offset_left = -212.264
-offset_top = -324.074
-offset_right = 179.224
-offset_bottom = 323.981
+offset_left = -544.064
+offset_top = -952.5
+offset_right = 528.936
+offset_bottom = 956.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -95,7 +102,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.211765, 0.176471, 0.0627451, 1)
+color = Color(0.20368, 0.176845, 0.109652, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Panel"]
 layout_mode = 1
@@ -183,10 +190,10 @@ anchor_left = 1.0
 anchor_top = 0.998
 anchor_right = 1.0
 anchor_bottom = 0.998
-offset_left = 240.987
-offset_top = 398.0
-offset_right = 310.987
-offset_bottom = 471.0
+offset_left = -832.013
+offset_top = -1507.18
+offset_right = -762.013
+offset_bottom = -1434.18
 texture = ExtResource("3_ws4t0")
 expand_mode = 1
 
@@ -218,11 +225,28 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.322107, 0.322107)
 
+[node name="Front" parent="Control/Panel/currentCard" index="1"]
+position = Vector2(489.387, 1659.64)
+scale = Vector2(1.87526, 2.12698)
+
+[node name="Content" parent="Control/Panel/currentCard/Front" index="0"]
+position = Vector2(-15.7908, -502.791)
+scale = Vector2(0.846, 0.846)
+texture = ExtResource("6_r31ui")
+
+[node name="RespDer" parent="Control/Panel/currentCard/Front/Content" index="0"]
+position = Vector2(737.608, -700)
+scale = Vector2(1.76, 1.76)
+
 [node name="txtRespDer" parent="Control/Panel/currentCard/Front/Content/RespDer" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
+
+[node name="RespIzq" parent="Control/Panel/currentCard/Front/Content" index="1"]
+position = Vector2(-649.535, -700)
+scale = Vector2(1.76, 1.76)
 
 [node name="txtRespIzq" parent="Control/Panel/currentCard/Front/Content/RespIzq" index="0"]
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -230,10 +254,136 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 
-[node name="JsonChecker" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_3imw6")
+[node name="IU" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_uip2p")
+
+[node name="HUD" type="Control" parent="IU"]
+layout_mode = 1
+anchor_right = 0.93
+anchor_bottom = 2.981
+offset_right = -0.360107
+offset_bottom = 0.31189
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnMenu" type="TextureButton" parent="IU/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 10.0
+offset_right = -13.0
+offset_bottom = 65.0
+grow_horizontal = 0
+texture_normal = ExtResource("6_c40fq")
+texture_pressed = ExtResource("7_hucs5")
+texture_hover = ExtResource("8_krfug")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Menu" type="Control" parent="IU"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_phr34")
+
+[node name="bgMenu" type="TextureRect" parent="IU/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_p33la")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="IU/Menu/bgMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.1
+anchor_right = 0.7
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuText" type="RichTextLabel" parent="IU/Menu/bgMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.2
+offset_right = 0.121643
+offset_bottom = -0.16481
+theme_override_font_sizes/normal_font_size = 78
+bbcode_enabled = true
+text = "Menu"
+scroll_active = false
+context_menu_enabled = true
+text_direction = 3
+
+[node name="VolText" type="RichTextLabel" parent="IU/Menu/bgMenu/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 166.0
+offset_right = 309.0
+offset_bottom = 213.0
+theme_override_font_sizes/normal_font_size = 34
+text = "Volumen"
+
+[node name="volSlider" type="HSlider" parent="IU/Menu/bgMenu/Panel"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 199.0
+offset_right = 389.0
+offset_bottom = 243.0
+value = 100.0
+
+[node name="Continuar" type="Button" parent="IU/Menu/bgMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28
+anchor_top = 0.5
+anchor_right = 0.658
+anchor_bottom = 0.594
+offset_left = -0.0239868
+offset_top = 18.0
+offset_right = -0.20639
+offset_bottom = 24.2704
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Continuar"
+
+[node name="Salir" type="Button" parent="IU/Menu/bgMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28
+anchor_top = 0.5
+anchor_right = 0.658
+anchor_bottom = 0.594
+offset_left = -0.0239868
+offset_top = 130.0
+offset_right = -0.20639
+offset_bottom = 136.27
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Salir"
+
+[connection signal="pressed" from="IU/HUD/btnMenu" to="IU" method="_on_btn_menu_pressed"]
+[connection signal="value_changed" from="IU/Menu/bgMenu/Panel/volSlider" to="IU/Menu" method="_on_vol_slider_value_changed"]
+[connection signal="pressed" from="IU/Menu/bgMenu/Panel/Salir" to="IU/Menu" method="_on_salir_pressed"]
 
 [editable path="Control/Panel/currentCard"]

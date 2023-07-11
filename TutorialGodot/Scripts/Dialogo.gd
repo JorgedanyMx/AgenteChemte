@@ -122,6 +122,10 @@ func showCard(nextLine):
 			$Panel/currentCard.infoCard(nextLine["R A"],nextLine["R B"],nextLine["Background Color"],nextLine["Imagen URL"])
 		else:
 			$Panel/currentCard.infoCard("mmm...","mmm...",nextLine["Background Color"],nextLine["Imagen URL"])
+		if(nextLine["Imagen URL"]!=null):
+			$Panel/currentCard.setImg(nextLine["Imagen URL"])
+		if(nextLine["Background Color"]!=null):
+			pass
 	
 func getGuionLine(idxNextLine):
 	var nextLine=findLine(currentCap,idxNextLine)
